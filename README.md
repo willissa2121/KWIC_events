@@ -22,7 +22,7 @@ Simply clone repo.
 
 ## Authors
 
-Scott Willis scott_willis1@baylor.edu
+Scott Willis scott_willis1@baylor.edu <br/>
 Jacob Formico jacob_formico1@baylor.edu
 
 ## Version History
