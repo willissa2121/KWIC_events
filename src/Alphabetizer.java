@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-
+import java.util.Comparator;
+import java.text.Collator;
 public class Alphabetizer implements Observer{
 
     ArrayList<String> lines;
@@ -9,12 +10,11 @@ public class Alphabetizer implements Observer{
     ArrayList<String> sortedLines = new ArrayList<String>();
 
     public void alphabetize(){
-        Collections.sort(lines, String.CASE_INSENSITIVE_ORDER);
-        for(String line: lines){
-            sortedLines.add(line);
-        }
+        // Performing case sensitive string comparisons
+        Collator collator = Collator.getInstance();
+        Collections.sort(lines, collator);
+        sortedLines.addAll(lines);
     }
-
     public void triggerEvent(ArrayList<String> lines) {
         this.lines = lines;
         alphabetize();
