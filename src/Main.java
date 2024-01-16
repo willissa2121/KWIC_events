@@ -14,16 +14,15 @@ public class Main {
         LineStorageWrapper lines = new LineStorageWrapper();
         LineStorageWrapper shifts = new LineStorageWrapper();
 
-        CircularShifter shifter = new CircularShifter(shifts.lines);
+        CircularShifter shifter = new CircularShifter(shifts);
         lines.addObserver(shifter);
 
-
-
-
+        Alphabetizer alphabetizer = new Alphabetizer();
+        shifts.addObserver(alphabetizer);
 
         Input input = new Input("/src/input.txt", lines);
+//        shifter.printShifts();
 
-        shifter.printShifts();
     }
 
 }

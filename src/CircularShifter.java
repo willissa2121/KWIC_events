@@ -1,12 +1,15 @@
+import javax.sound.sampled.Line;
 import java.util.ArrayList;
 
 public class CircularShifter implements Observer {
 
+    LineStorageWrapper sh;
     ArrayList<String> shifts = new ArrayList<String>();
     ArrayList<String> lines = new ArrayList<String>();
 
-    public CircularShifter( ArrayList shifts) {
-        this.shifts = shifts;
+    public CircularShifter(LineStorageWrapper shifts) {
+        this.sh = shifts;
+        this.shifts = shifts.lines;
     }
 
     public void initiateShift() {
@@ -15,6 +18,8 @@ public class CircularShifter implements Observer {
             String[] arrOfStr = line.split(" ");
             shift(arrOfStr, arrOfStr.length);
         }
+        System.out.println("Done shifting");
+        sh.setChanged();
     }
 
     public void shift(String[] arrOfStr, int shift){
