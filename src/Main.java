@@ -8,9 +8,7 @@ import java.io.IOException;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-
-    public static void main(String[] args) {
-
+    public static void execute(){
         LineStorageWrapper lines = new LineStorageWrapper();
         LineStorageWrapper shifts = new LineStorageWrapper();
 
@@ -23,7 +21,12 @@ public class Main {
         Output output = new Output(shifts.lines);
         Input input = new Input("/src/input.txt", lines);
         output.print();
-
     }
+
+    public static void main(String[] args) {
+        execute();
+    }
+
+
 
 }
