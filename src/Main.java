@@ -20,8 +20,9 @@ public class Main {
         Alphabetizer alphabetizer = new Alphabetizer();
         shifts.addObserver(alphabetizer);
 
+        Output output = new Output(shifts.lines);
         Input input = new Input("/src/input.txt", lines);
-//        shifter.printShifts();
+        output.print();
 
     }
 

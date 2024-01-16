@@ -13,12 +13,10 @@ public class CircularShifter implements Observer {
     }
 
     public void initiateShift() {
-        System.out.println("Shifting words now");
         for (String line : lines) {
             String[] arrOfStr = line.split(" ");
             shift(arrOfStr, arrOfStr.length);
         }
-        System.out.println("Done shifting");
         sh.setChanged();
     }
 
