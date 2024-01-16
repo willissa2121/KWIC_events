@@ -10,9 +10,7 @@ public class Alphabetizer implements Observer{
     ArrayList<String> sortedLines = new ArrayList<String>();
 
     public void alphabetize(){
-        // Performing case sensitive string comparisons
-        Collator collator = Collator.getInstance();
-        Collections.sort(lines, collator);
+        Collections.sort(lines);
         sortedLines.addAll(lines);
     }
     public void triggerEvent(ArrayList<String> lines) {
