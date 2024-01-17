@@ -1,4 +1,3 @@
-import javax.sound.sampled.Line;
 import java.util.ArrayList;
 
 public class CircularShifter implements Observer {
@@ -20,8 +19,8 @@ public class CircularShifter implements Observer {
         sh.setChanged();
     }
 
-    public void shift(String[] arrOfStr, int shift){
-        if(shift > 0) {
+    public void shift(String[] arrOfStr, int shift) {
+        if (shift > 0) {
             String[] newArr = new String[arrOfStr.length];
             for (int i = 0; i < arrOfStr.length; i++) {
                 if (i == arrOfStr.length - 1) {
@@ -41,8 +40,8 @@ public class CircularShifter implements Observer {
         initiateShift();
     }
 
-    public void printShifts(){
-        for (String shift : shifts){
+    public void printShifts() {
+        for (String shift : shifts) {
             System.out.println(shift);
         }
     }
