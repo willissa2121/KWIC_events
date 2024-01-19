@@ -28,7 +28,7 @@ public class Input {
                 // read next line
                 line = reader.readLine();
             }
-            lines.setChanged();
+            lines.setChanged("ADD EVENT");
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();

@@ -12,9 +12,11 @@ public class Alphabetizer implements Observer {
         sortedLines.addAll(lines);
     }
 
-    public void triggerEvent(ArrayList<String> lines) {
-        this.lines = lines;
-        alphabetize();
+    public void triggerEvent(ArrayList<String> lines, String eventType) {
+        if (eventType.equals("ADD EVENT")) {
+            this.lines = lines;
+            alphabetize();
+        }
     }
 
     public void printLines() {

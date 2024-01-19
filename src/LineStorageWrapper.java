@@ -24,9 +24,9 @@ public class LineStorageWrapper implements Observable {
             System.out.println(i);
     }
 
-    public void setChanged() {
+    public void setChanged(String eventType) {
         for (Observer o : observers) {
-            o.triggerEvent(lines);
+            o.triggerEvent(lines, eventType);
         }
     }
 }

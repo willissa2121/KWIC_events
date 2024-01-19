@@ -16,7 +16,7 @@ public class CircularShifter implements Observer {
             String[] arrOfStr = line.split(" ");
             shift(arrOfStr, arrOfStr.length);
         }
-        sh.setChanged();
+        sh.setChanged("ADD EVENT");
     }
 
     public void shift(String[] arrOfStr, int shift) {
@@ -35,9 +35,11 @@ public class CircularShifter implements Observer {
         }
     }
 
-    public void triggerEvent(ArrayList<String> lines) {
-        this.lines = lines;
-        initiateShift();
+    public void triggerEvent(ArrayList<String> lines, String eventType) {
+        if (eventType.equals("ADD EVENT")) {
+            this.lines = lines;
+            initiateShift();
+        }
     }
 
     public void printShifts() {
