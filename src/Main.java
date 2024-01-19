@@ -1,8 +1,7 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.io.IOException;
 public class Main {
 
-    public static void execute() {
+    public static void execute() throws IOException {
         LineStorageWrapper lines = new LineStorageWrapper();
         LineStorageWrapper shifts = new LineStorageWrapper();
 
@@ -17,7 +16,7 @@ public class Main {
         output.print();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         execute();
     }
 }

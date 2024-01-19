@@ -1,4 +1,3 @@
-import javax.sound.sampled.Line;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,13 +7,14 @@ public class Input {
 
     LineStorageWrapper lines;
     String filepath;
-    public Input(String filepath, LineStorageWrapper lines){
+
+    public Input(String filepath, LineStorageWrapper lines) throws IOException {
         this.lines = lines;
         this.filepath = filepath;
         readFile();
     }
 
-    public void readFile(){
+    public void readFile() throws IOException {
         BufferedReader reader;
 
         try {
